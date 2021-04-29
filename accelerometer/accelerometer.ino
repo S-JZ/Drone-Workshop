@@ -27,7 +27,7 @@ void setup() {
   M.calibrateGryro();
 
  // Setting threshold value
- M.setThreshhold(3);
+ M.setThreshold(3);
 // Check my settings
  checker();
  
