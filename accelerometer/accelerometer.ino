@@ -3,14 +3,15 @@
 
 MPU6050 M;
 
-/* Accelerometer part : 
- *  Imported two libraries: Wire, MPU6050 header file
- *  Checked the sensor
- *  Calibrated 
- *  Threshold Value
- *  Checked the settings --- DPS, Sleep Mode, References
- *  Normalized and Raw Values
-*/
+/* Imported the libraries
+ *  Initialize MPU6050
+ *  Check my sensor is connected or not
+ *  Calibrate my gyroscope
+ *  Threshold Value 
+ *  Check my settings --- DPS, Sleep Mode, References
+ *  Check offsets
+ *  Raw and Normalized Readings 
+ */
 
 
 void setup() {
