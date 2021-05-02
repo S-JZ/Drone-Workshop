@@ -1,7 +1,7 @@
 # Drone-Workshop
 A training session on Arduino for fight controller codes.
 
-## Answered the following question:
+## Answered the following questions:
 
 Write a code for fetching data from MPU6050 Gyroscope, accelerometer sensor on Arduino.
 --
