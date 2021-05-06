@@ -126,8 +126,8 @@ void loop() {
   Serial.println(Normal.ZAxis);
 
   // Accelerometer Values
-  Vector rawAccel = mpu.readRawAccel();
-  Vector normAccel = mpu.readNormalizeAccel();
+  Vector rawAccel = M.readRawAccel();
+  Vector normAccel = M.readNormalizeAccel();
   //Raw
   Serial.println(" Acc Raw X = ");
   Serial.println(rawAccel.XAxis);
