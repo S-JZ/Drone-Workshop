@@ -1,7 +1,6 @@
 # Drone-Workshop
-<<<<<<< HEAD
-A training session.
-=======
+
+
 A training session on Arduino for fight controller codes.
 
 ## Answered the following questions:
@@ -14,4 +13,4 @@ GHz receiver on Arduino.
 Write a code for reading the signals from the 2.4 GHZ receiver from all 4 channels simultaneously 
 on Arduino.
 --
->>>>>>> 19a086d5b9a4f2a9a0e4e8b2cc84214ecae6e2fc
+
