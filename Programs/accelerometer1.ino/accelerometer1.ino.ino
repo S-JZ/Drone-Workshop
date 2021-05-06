@@ -17,7 +17,7 @@ void setup() {
    Serial.begin(115200);
    Serial.println("Initialized MPU6050 successfully");
    // Check if the wirings are connected or not.
-    while(!M.begin(MPU6050_DPS2000,MPU6050_RANGE2G)){
+    while(!M.begin(MPU6050_SCALE_2000DPS,MPU6050_RANGE2G)){
     Serial.println("Check your connections again, sensor not detected!");
     delay(200);
     }
@@ -41,7 +41,7 @@ void checker(){
   // Clock Source
   Serial.println("Clock Source :");
   switch M.getClockSource(){
-    case MPU6050_CLOCK_RESET:
+    case MPU6050_CLOCK_SCALE_RESET:
     Serial.println("Stops the clock and reset it."); break;
     case MPU6050_CLOCK_INTERNAL_8MHZ:
     Serial.println("PLL Internal reference 8 MHz");break;
@@ -72,17 +72,17 @@ void checker(){
   // Check DPS
   Serial.println("Gyroscope :");
   switch M.getScale(){
-    case MPU6050_DPS2000:
+    case MPU6050_SCALE_2000DPS:
     Serial.println("2000 DPS");
     break;
-    case MPU6050_DPS1000:
+    case MPU6050_SCALE_1000DPS:
     Serial.println("1000 DPS");
     break;
-    case MPU6050_DPS500:
+    case MPU6050_SCALE_500DPS:
     Serial.println("500 DPS");
     break;
-    case MPU6050_DPS200:
-    Serial.println("200 DPS");
+    case MPU6050_SCALE_250DPS:
+    Serial.println("250 DPS");
     break;
   }
   Serial.print(" * Accelerometer:         ");
