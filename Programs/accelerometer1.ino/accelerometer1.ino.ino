@@ -85,11 +85,28 @@ void checker(){
     Serial.println("200 DPS");
     break;
   }
+  Serial.print(" * Accelerometer:         ");
+  switch(M.getRange())
+  {
+    case MPU6050_RANGE_16G: Serial.println("+/- 16 G"); break;
+    case MPU6050_RANGE_8G:  Serial.println("+/- 8 G"); break;
+    case MPU6050_RANGE_4G:  Serial.println("+/- 4 G"); break;
+    case MPU6050_RANGE_2G:  Serial.println("+/- 2 G"); break;
+  }  
+
+  Serial.print("Accelerometer: ");
+  Serial.print(M.getAccelOffsetX());Serial.print("\");
+  Serial.print(M.getAccelOffsetY());Serial.print("\");
+  Serial.println(M.getAccelOffsetZ());
+  
+  Serial.println();
   
   
 }
 
 void loop() {
+
+  //Gyroscope Values
   Vector Raw = M.readRawGyro();
   Vector Normal =M.readNormalizeGyro();
   // Fetching Raw data
@@ -107,5 +124,24 @@ void loop() {
   Serial.println(Normal.YAxis);
   Serial.println("Normalized Z Axis =");
   Serial.println(Normal.ZAxis);
-  delay(1500); 
+
+  // Accelerometer Values
+  Vector rawAccel = mpu.readRawAccel();
+  Vector normAccel = mpu.readNormalizeAccel();
+  //Raw
+  Serial.println(" Acc Raw X = ");
+  Serial.println(rawAccel.XAxis);
+  Serial.println(" Acc Raw Y = ");
+  Serial.println(rawAccel.YAxis);
+  Serial.println(" Acc Raw Z = ");
+  Serial.println(rawAccel.ZAxis);
+  // Normalized
+  Serial.println(" Acc Normal X = ");
+  Serial.println(normAccel.XAxis);
+  Serial.println(" Acc Normal Y= ");
+  Serial.println(normAccel.YAxis);
+  Serial.println(" Acc Normal Z= ");
+  Serial.println(normAccel.ZAxis);
+  
+  delay(100); 
 }
